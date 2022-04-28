@@ -103,6 +103,20 @@ public class GHReleaseBuilder {
     }
 
     /**
+     * Optional
+     *
+     * @param generateReleaseNotes
+     *            Whether to automatically generate the name and body for this release. If {@link #name} is specified,
+     *            the specified name will be used; otherwise, a name will be automatically generated. If {@link #body}
+     *            is specified, the body will be pre-pended to the automatically generated notes.
+     * @return the gh release builder
+     */
+    public GHReleaseBuilder generateReleaseNotes(boolean generateReleaseNotes) {
+        builder.with("generate_release_notes", generateReleaseNotes);
+        return this;
+    }
+
+    /**
      * Create gh release.
      *
      * @return the gh release
